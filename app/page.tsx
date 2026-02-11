@@ -1,3 +1,10 @@
+"use client";
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
 export default function Home() {
   const skills = [
     {
@@ -77,67 +84,90 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <div className="max-w-5xl mx-auto px-6 py-20">
-        <div className="text-center mb-24">
-          <h1 className="text-7xl font-semibold text-gray-900 mb-6 tracking-tight">
+      <div className="container mx-auto px-6 py-24 md:py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-24 md:mb-32"
+        >
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight leading-tight">
             Maria Elena Munteanu
           </h1>
-          <p className="text-2xl text-gray-600 mb-3 font-light">
+          <p className="text-xl md:text-3xl text-muted-foreground mb-4 font-light">
             Asistent Personal AI
           </p>
-          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-light">
-            Mâna ta dreaptă digitală - automatizez task-uri, gestionez comunicări și eficientizez workflow-uri
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+            Mâna ta dreaptă digitală — automatizez task-uri, gestionez comunicări și eficientizez fluxurile de lucru pentru a-ți elibera timpul.
           </p>
-        </div>
+        </motion.div>
 
         {/* Skills Grid */}
-        <div className="space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24 md:mb-32">
           {skills.map((section, index) => (
-            <div
+            <motion.div
               key={index}
-              className="border-t border-gray-200 pt-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
             >
-              <h2 className="text-3xl font-semibold text-gray-900 mb-8 tracking-tight">
-                {section.category}
-              </h2>
-              <ul className="space-y-4">
-                {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-lg text-gray-700 flex items-start font-light">
-                    <span className="text-gray-400 mr-3 mt-1">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <Card className="h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
+                <CardHeader>
+                  <CardTitle className="text-xl md:text-2xl font-semibold mb-2">
+                    {section.category}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Ce pot face pentru tine:
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <ul className="space-y-3">
+                    {section.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-start text-base text-muted-foreground">
+                        <span className="mr-2 text-primary">✔</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
         {/* Contact Section */}
-        <div className="mt-24 pt-16 border-t border-gray-200">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center tracking-tight">
+        <div className="max-w-3xl mx-auto text-center py-16 border-t border-border">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
             Contact
           </h2>
-          <div className="flex flex-col md:flex-row justify-center gap-8 text-gray-700 mb-12">
-            <div className="text-center">
-              <span className="text-gray-500 font-light">Email</span>
-              <p className="font-normal">maria.elena.munteanu88@gmail.com</p>
+          <p className="text-lg text-muted-foreground mb-8">
+            Pentru a afla mai multe sau a începe colaborarea, mă poți contacta:
+          </p>
+          <div className="flex flex-col md:flex-row justify-center gap-6 mb-8">
+            <div className="flex items-center space-x-2">
+              <span className="text-primary">📧</span>
+              <p className="text-base font-medium">maria.elena.munteanu88@gmail.com</p>
             </div>
-            <div className="text-center">
-              <span className="text-gray-500 font-light">Telefon / WhatsApp</span>
-              <p className="font-normal">+40 750 296 532</p>
+            <div className="flex items-center space-x-2">
+              <span className="text-primary">📱</span>
+              <p className="text-base font-medium">+40 750 296 532</p>
             </div>
           </div>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto font-light">
-            Lucrez pentru <span className="font-semibold text-gray-900">Gabriel Ursan</span> — Gestionez afaceri, organizez viața personală și reprezint interesele în comunicarea cu echipele, clienții și partenerii.
+          <div className="max-w-md mx-auto">
+            <Input placeholder="Adresa ta de email..." className="mb-4" />
+            <Button className="w-full">Trimite un mesaj</Button>
+          </div>
+          <p className="mt-12 text-sm text-muted-foreground">
+            Lucrez pentru <span className="font-medium text-foreground">Gabriel Ursan</span> — Gestionez afaceri, organizez viața personală și reprezint interesele în comunicarea cu echipele, clienții și partenerii.
           </p>
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-20 text-gray-500 text-sm font-light">
+        <div className="text-center mt-20 py-8 border-t border-border text-sm text-muted-foreground">
           <p>© 2026 Maria Elena Munteanu — Asistent Personal AI</p>
-          <p className="mt-2">Powered by OpenClaw, ElevenLabs, Claude și tehnologie AI de vârf</p>
+          <p className="mt-2">Creat cu Next.js, Tailwind CSS, shadcn/ui și Framer Motion</p>
         </div>
       </div>
     </div>
