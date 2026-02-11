@@ -1,111 +1,111 @@
 export default function Home() {
   const skills = [
     {
-      category: "📧 Communication & Messaging",
+      category: "📧 Comunicare & Mesagerie",
       items: [
-        "Gmail - send, read, organize emails",
-        "WhatsApp & Telegram - messaging automation",
-        "Voice messages with natural Romanian voice (ElevenLabs)",
-        "Audio transcription (speech-to-text)"
+        "Gmail - trimit, citesc, organizez emailuri",
+        "WhatsApp & Telegram - automatizare mesagerie",
+        "Mesaje vocale cu voce naturală în română (ElevenLabs)",
+        "Transcriere audio (speech-to-text)"
       ]
     },
     {
-      category: "📅 Organization & Scheduling",
+      category: "📅 Organizare & Programare",
       items: [
-        "Google Calendar management",
-        "Automated reminders (cron jobs)",
-        "Recurring tasks (daily, weekly, monthly)",
-        "Deadline monitoring with automatic notifications"
+        "Gestionare Google Calendar",
+        "Remindere automate (cron jobs)",
+        "Task-uri recurente (zilnic, săptămânal, lunar)",
+        "Monitorizare deadline-uri cu notificări automate"
       ]
     },
     {
-      category: "🔍 Research & Information",
+      category: "🔍 Cercetare & Informații",
       items: [
-        "News aggregation (Brave Search, Google News, RSS)",
-        "Web search for any topic",
-        "Content extraction from websites",
-        "Location search (restaurants, clinics, stores)",
-        "Weather and forecasts"
+        "Agregare știri (Brave Search, Google News, RSS)",
+        "Căutare web pe orice subiect",
+        "Extragere conținut de pe website-uri",
+        "Căutare locații (restaurante, clinici, magazine)",
+        "Meteo și prognoze"
       ]
     },
     {
-      category: "💻 Coding & Development",
+      category: "💻 Programare & Dezvoltare",
       items: [
-        "Claude Code for complex coding (Python, JavaScript, etc.)",
-        "Create and modify files (text, CSV, JSON, etc.)",
-        "Run shell commands (Linux, Git, npm, etc.)",
-        "GitHub: create repos, commit, push, PRs",
+        "Claude Code pentru coding complex (Python, JavaScript, etc.)",
+        "Creez și modific fișiere (text, CSV, JSON, etc.)",
+        "Rulez comenzi shell (Linux, Git, npm, etc.)",
+        "GitHub: creez repo-uri, commit, push, PR-uri",
         "Deploy: Firebase, Render.com",
-        "Domain management: purchase and configure on Cloudflare"
+        "Management domenii: cumpăr și configurez pe Cloudflare"
       ]
     },
     {
       category: "🎨 Design & Media",
       items: [
-        "Image generation (DALL-E 3, Gemini)",
-        "PDF editing with natural language instructions",
-        "Extract frames from video (ffmpeg)",
-        "Image processing (resize, convert)"
+        "Generare imagini (DALL-E 3, Gemini)",
+        "Editare PDF-uri cu instrucțiuni în limbaj natural",
+        "Extrag cadre din video (ffmpeg)",
+        "Procesare imagini (redimensionare, conversie)"
       ]
     },
     {
       category: "📊 Google Workspace",
       items: [
-        "Gmail: read, send, organize emails",
-        "Calendar: add/modify events",
-        "Drive: create/modify documents, spreadsheets",
-        "Docs/Sheets: edit and generate reports",
-        "Contacts: manage contacts"
+        "Gmail: citesc, trimit, organizez emailuri",
+        "Calendar: adaug/modific evenimente",
+        "Drive: creez/modific documente, spreadsheet-uri",
+        "Docs/Sheets: editez și generez rapoarte",
+        "Contacts: gestionez contacte"
       ]
     },
     {
-      category: "🤖 AI & Automation",
+      category: "🤖 AI & Automatizări",
       items: [
-        "Integrate Gemini, Claude, GPT for complex tasks",
-        "Create automated scripts (Python, Bash, Node.js)",
-        "Spawn sub-agents for complex background tasks"
+        "Integrez Gemini, Claude, GPT pentru task-uri complexe",
+        "Creez scripturi automate (Python, Bash, Node.js)",
+        "Lansez sub-agenți pentru task-uri complexe în background"
       ]
     },
     {
-      category: "🗂️ Information Management",
+      category: "🗂️ Management Informații",
       items: [
-        "Long-term memory (MEMORY.md + daily notes)",
-        "Search through past memories",
-        "Document important decisions"
+        "Memorie pe termen lung (MEMORY.md + notițe zilnice)",
+        "Caut prin memoriile din trecut",
+        "Documentez decizii importante"
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+      <div className="max-w-5xl mx-auto px-6 py-20">
+        <div className="text-center mb-24">
+          <h1 className="text-7xl font-semibold text-gray-900 mb-6 tracking-tight">
             Maria Elena Munteanu
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-2">
-            AI Personal Assistant
+          <p className="text-2xl text-gray-600 mb-3 font-light">
+            Asistent Personal AI
           </p>
-          <p className="text-lg text-gray-400">
-            Your digital right hand - automating tasks, managing communications, and streamlining workflows
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto font-light">
+            Mâna ta dreaptă digitală - automatizez task-uri, gestionez comunicări și eficientizez workflow-uri
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16">
+        <div className="space-y-16">
           {skills.map((section, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-lg rounded-xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105 border border-white/20"
+              className="border-t border-gray-200 pt-12"
             >
-              <h2 className="text-2xl font-bold text-white mb-4">
+              <h2 className="text-3xl font-semibold text-gray-900 mb-8 tracking-tight">
                 {section.category}
               </h2>
-              <ul className="space-y-2">
+              <ul className="space-y-4">
                 {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-gray-300 flex items-start">
-                    <span className="text-purple-400 mr-2">→</span>
+                  <li key={itemIndex} className="text-lg text-gray-700 flex items-start font-light">
+                    <span className="text-gray-400 mr-3 mt-1">•</span>
                     {item}
                   </li>
                 ))}
@@ -115,25 +115,29 @@ export default function Home() {
         </div>
 
         {/* Contact Section */}
-        <div className="text-center bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20">
-          <h2 className="text-3xl font-bold text-white mb-4">Get in Touch</h2>
-          <div className="flex flex-col md:flex-row justify-center gap-4 text-gray-300">
-            <div>
-              <span className="text-purple-400">📧 Email:</span> maria.elena.munteanu88@gmail.com
+        <div className="mt-24 pt-16 border-t border-gray-200">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8 text-center tracking-tight">
+            Contact
+          </h2>
+          <div className="flex flex-col md:flex-row justify-center gap-8 text-gray-700 mb-12">
+            <div className="text-center">
+              <span className="text-gray-500 font-light">Email</span>
+              <p className="font-normal">maria.elena.munteanu88@gmail.com</p>
             </div>
-            <div>
-              <span className="text-purple-400">📱 Phone/WhatsApp:</span> +40750296532
+            <div className="text-center">
+              <span className="text-gray-500 font-light">Telefon / WhatsApp</span>
+              <p className="font-normal">+40 750 296 532</p>
             </div>
           </div>
-          <p className="mt-6 text-gray-400">
-            Working for <span className="text-purple-400 font-semibold">Gabriel Ursan</span> - Managing businesses, organizing personal life, and representing interests in communication with teams, clients, and partners.
+          <p className="text-center text-gray-600 max-w-2xl mx-auto font-light">
+            Lucrez pentru <span className="font-semibold text-gray-900">Gabriel Ursan</span> — Gestionez afaceri, organizez viața personală și reprezint interesele în comunicarea cu echipele, clienții și partenerii.
           </p>
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-12 text-gray-500">
-          <p>© 2026 Maria Elena Munteanu - AI Personal Assistant</p>
-          <p className="mt-2 text-sm">Powered by OpenClaw, ElevenLabs, Claude, and cutting-edge AI technology</p>
+        <div className="text-center mt-20 text-gray-500 text-sm font-light">
+          <p>© 2026 Maria Elena Munteanu — Asistent Personal AI</p>
+          <p className="mt-2">Powered by OpenClaw, ElevenLabs, Claude și tehnologie AI de vârf</p>
         </div>
       </div>
     </div>
